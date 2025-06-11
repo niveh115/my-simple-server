@@ -16,6 +16,10 @@ app.get("/about", (request, response) => {
   response.sendFile(path.join(__dirname, "public", "about.html"));
 });
 
+app.use((request, response) => {
+  response.sendFile(path.join(__dirname, "public", "not-found.html"));
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log("Server started");
